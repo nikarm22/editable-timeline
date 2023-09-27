@@ -99,7 +99,8 @@ const EditableTimelineUnwrapped: FC = () => {
     useEffect(() => {
         const handleHotKeys = (event: KeyboardEvent) => {
             const selectedItem = timelineRef.current?.state.selectedItem;
-            if (!selectedItem) return;
+
+            if (!selectedItem || currentEditId !== null) return;
             if (event.key === "Delete") {
                 deleteItem(selectedItem);
             } else if (event.key === "Enter") {
@@ -109,7 +110,7 @@ const EditableTimelineUnwrapped: FC = () => {
 
         document.addEventListener("keydown", handleHotKeys);
         return () => document.removeEventListener("keydown", handleHotKeys);
-    }, []);
+    }, [currentEditId]);
 
     return (
         <Timeline
