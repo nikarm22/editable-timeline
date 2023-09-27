@@ -1,0 +1,74 @@
+.et-left-handle, .et-right-handle {
+    cursor: col-resize !important;
+    width: 6px !important;
+}
+
+.et-left-handle {
+    border-left: 6px double rgb(255, 152, 0);
+}
+
+.et-right-handle {
+    border-right: 6px double rgb(255, 152, 0);
+}
+
+.et-item-wrapper {
+    padding-left: 8px;
+    padding-right: 8px;
+    border-width: 1px 0 !important;
+    position: relative;
+}
+
+.et-item-wrapper.et-selected {
+    padding-right: 40px;
+}
+
+.et-item-actions {
+    position: absolute;
+    height: 100%;
+    padding: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    display: flex;
+    gap: 2px;
+    margin-right:8px;
+}
+
+.et-item-action {
+    border-radius: 2px;
+    padding: 1px;
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
+}
+
+.et-item-action:hover {
+    transition: transform 0.15s ease-out;
+    transform: scale(1.2);
+    border-color: rgb(255, 152, 0);
+    background-color: rgba(255, 152, 0, 0.4);
+}
+
+.et-item-action.delete > img {
+    fill: red;
+}
+
+.et-item-action > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.et-item-content {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    max-width: 100%;
+}
+
+.et-item-edit {
+    width: calc(100% - 12px);
+    /* position: absolute; */
+    z-index: 120;
+}
